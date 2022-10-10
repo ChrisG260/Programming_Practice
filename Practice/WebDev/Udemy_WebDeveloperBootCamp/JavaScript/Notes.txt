@@ -1,0 +1,148 @@
+
+
+
+//////// Declare
+
+const goodTitles = 5
+let gt = 5
+
+////////// Filter
+const goodTitles = goodMovies.map(m => m.title);
+
+const badMovies = movies.filter(m => m.score < 70)
+
+
+///// Some
+
+returns true or false
+
+//Are there any words > 4
+words.some(word => {
+    return word.length > 4;
+})
+
+///// Every
+
+// If every word has a length of 3 return true other wise false
+words.every(word = > {
+    return word.length ===3;
+})
+
+////// Reduce
+
+// Example Sum values of an array using reduce, which is a recursive function with two parms
+// First Parm is the returnValue of the function (first time it's the first element)
+// Second parm is the next value of the array
+
+[3,5,7,9,11].reduce((returnValue, nextValue)) => {
+    return returnValue + nextValue;
+}
+
+// Example to get min value using reduce
+const price = [9.99, 1.50, 19.99, 49.99, 30.50];
+price.reduce((min, value) => {
+    if(min > value) return value;
+    else return min;
+})
+
+/////// Default parms
+
+function rolldie(numSides = 6) {
+    return Math.flor(Math.random() * numSides) + 1;
+}
+
+/////// Spread function
+
+// use ... to spread an array into seprate arguments
+Math.max(...NumArray);
+
+// Combine arrays using spread
+const cats = ['Blue', 'Scout', 'Rocket'];
+const dogs = ['Rusty', 'Wyatt']
+
+const allPets = [...cats, ...dogs];
+
+// use spread to add element to object
+const canine = { color: black, name: 'Shadow', isPet: true}
+
+const canineObjectPlusAddtionalAttr = {...canine, sleeping : true}
+
+
+/////////// Rest parms
+
+// Rest allows for undifined params for input
+// arguments is not an array, contains the list of values passed in
+function sumAll() {
+    let total = 0;
+    for(let i = 0; i < arguments.length; i++) {
+        total += arguments[i];
+    }
+    return total;
+}
+
+sumAll(1,2,3)
+sumAll(1,3,4,5,6,7,8)
+
+/////////// Destructuring
+
+const scores = [1000, 300, 200, 100, 50]
+
+const [highScore, secondPlace ] = scores
+
+highScore = 1000
+secondPlace = 300
+
+const [highScore, secondPlace, ...otherPlayers ] = scores
+
+otherPlayers = [200, 100, 50]
+
+
+//////////////// Destrucuring from Objects
+
+const user = {
+    email: 'some_email@email.com',
+    password : 'a;dhfiuaenj',
+    firstName : 'Chris',
+    lastName : 'Gonzales'
+}
+
+const {firstName, lastName} = user;
+
+// reanme property
+
+const {password : UserPassword } = user;
+
+UserPassword = 'a;dhfiuaenj';
+
+//////////////// Destrucuring parms
+
+// base example
+function fullName(user){
+    return `${user.firstName} ${user.lastName}`;
+}
+
+function fullName({firstName, lastName}) {
+    return `${firstName} ${lastName}`
+}
+
+// base way
+movies.filter((movie) => movie.score >= 90)
+
+// destruct object first
+movies.filter(({score}) => score >= 90)
+
+// map
+movies.map(movie => {
+    return `${movie.title} (${movie.year}) is rated ${movie.score}`
+})
+
+// destruct first
+movies.map( ({title, year, score}) => {
+    return `${title} (${year}) is rated ${score}`
+})
+
+
+
+
+
+

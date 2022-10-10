@@ -1,0 +1,58 @@
+package com.leetcode.inverttree;
+
+// Definition for a binary tree node.
+public class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+    TreeNode() {}
+    TreeNode(int val) { 
+    	this.val = val; 
+    	this.left = new TreeNode(); 
+    	this.right = new TreeNode();}
+    TreeNode(int val, TreeNode left, TreeNode right) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
+    }
+    
+    public static TreeNode insert(TreeNode t, int val) {
+    	
+    	if(t == null) {
+    		return new TreeNode(val);
+    	}
+    	
+    	if(val < t.val) {
+    		t.left = insert(t.left, val);
+    		
+    	}else {
+    		t.right = insert(t.right, val);
+    	}
+    	
+    	return t;
+    	
+    }
+    
+    // Function to construct a BST from given keys
+    public static TreeNode constructBST(int[] keys)
+    {
+    	TreeNode root = null;
+        for (int key: keys) {
+            root = insert(root, key);
+        }
+        return root;
+    }
+    
+    // Function to perform inorder traversal on the tree
+    public static void inorder(TreeNode root)
+    {
+        if (root == null) {
+            return;
+        }
+ 
+        inorder(root.left);
+        System.out.print(root.val + " ");
+        inorder(root.right);
+    }
+    
+}

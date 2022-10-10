@@ -1,0 +1,42 @@
+div {
+  width: 300px;
+  height: 150px;
+}
+
+/* 
+  Need: border-color, border-width, border-style
+  to see the boarder
+ */
+h1 {
+  background-color: olive;
+  width: 200px;
+  height: 40px;
+  border-color: black;
+  border-width: 2px;
+  border-style: solid;
+  box-sizing: border-box;
+}
+
+#one {
+  border-color: yellowgreen;
+  border-width: 4px;
+  border-style: solid;
+  box-sizing: border-box;
+  /* round edges */
+  border-radius: 5%;
+}
+
+#two {
+  border-color: gray;
+  border-width: 4px;
+  border-style: dashed;
+  box-sizing: border-box;
+}
+
+#three {
+  /* Short hand boarder : width/style/color */
+  border: 4px inset royalblue;
+  box-sizing: border-box;
+  /* set left side thicker*/
+  border-left-width: 10px;
+}

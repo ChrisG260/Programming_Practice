@@ -1,0 +1,67 @@
+package com.leetcode.mergeLinkedList;
+
+import com.leet.reverselinklist.ListNode;
+
+class ListNode {
+    int val;
+    ListNode next;
+    ListNode() {this.val = 0;}
+    ListNode(int val) { this.val = val; }
+    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+    public void addArray(int[] arr) {
+   	 if(arr.length < 1) return;
+   	 this.val = arr[0];
+   	 for(int i = 1; i < arr.length; i++) {
+   		 this.add(arr[i]);    		 
+   	 }
+    }
+    public void add(int value) {
+	   	 if(this.next == null) {
+	   		 this.next = new ListNode(value);
+	   	 }
+	   	 else
+	   	 {
+		    	 ListNode head = this.next;
+		    	 while(head.next != null) head = head.next;
+		    	 head.next = new ListNode(value);
+	   	 }
+    }
+    
+    @Override
+    public String toString() {
+    	String result = "";
+    	
+    	ListNode list = this.next;
+    	result = "[" + this.val + "->";
+    	
+    	while(list != null) {
+    		result += "->" + list.val;  
+    	}
+    	
+    	return result + " ]";
+    }
+    	
+}
+
+public class Soultion {
+	
+    static public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+        
+    	return null;
+    }
+
+	public static void main(String[] args) {
+		ListNode node1 = new ListNode();
+		ListNode node2 = new ListNode();
+		
+		node1.addArray(new int[] {1,2,4});
+		node2.addArray(new int[] {1,3,4});
+		
+		ListNode node = mergeTwoLists(node1, node2);
+		
+		int t = 0;
+		t++;
+	}
+
+}
+

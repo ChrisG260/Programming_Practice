@@ -1,0 +1,65 @@
+package com.LongestRepCharRepl;
+
+import java.util.Collections;
+import java.util.HashMap;
+
+public class Solution_LRCR {
+	
+	/*
+	 * Sliding window
+	 * 	Input: s = "ABAB", k = 2
+		Output: 4
+		Explanation: Replace the two 'A's with two 'B's or vice versa.
+		
+		[A][B][A][B]
+		^^
+		l r pointers
+		create map of characters, <Character, Integer> (character, count)
+		while r < s.length
+			add s[r] to character map
+			get length of window: r - l
+			find highest freq character
+			if(window - highest freq character <= k) we have a valid window, update result
+			else slide l to the right
+			slide r to the right
+			  
+		 
+	 */
+	static public int characterReplacement(String s, int k) {
+		
+		int result = 0;
+		
+		if(s == null || s.isEmpty()) return result;
+		
+		int left = 0;
+		int right = 0;
+		
+		HashMap<Character, Integer> cMap = new HashMap<>();
+		
+		for(right = 0; right < s.length(); right++) {
+			
+			Character key = s.charAt(right);
+			Integer cnt = cMap.get(key);
+			if(cnt == null) {cMap.put(key, 1);} else {cMap.put(key, cnt + 1);} // increment count or add new
+			int windowLen = right - left + 1;
+			while( windowLen - Collections.max(cMap.values()) > k) {
+				key = s.charAt(left);
+				cnt = cMap.get(key);
+				cMap.put(key, cnt - 1);
+				left++;
+			}
+			result = Math.max(windowLen, result);
+
+		}
+		
+		return result;
+	        
+	}
+
+	public static void main(String[] args) {
+		
+		System.out.println(characterReplacement("ABAB", 2));
+		System.out.println(characterReplacement("AABABBA", 1));
+	}
+
+}

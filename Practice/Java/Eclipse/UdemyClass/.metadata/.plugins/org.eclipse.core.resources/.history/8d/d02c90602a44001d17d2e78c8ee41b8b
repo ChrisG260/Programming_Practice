@@ -1,0 +1,15 @@
+package com.chris.minwinsub;
+
+import static org.junit.jupiter.api.Assertions.*;
+import com.chris.minwinsub.MinWindow;
+
+import org.junit.jupiter.api.Test;
+
+class MinWindowTest {
+
+	@Test
+	void testMinWindow() {
+		assertEquals("BANC",MinWindow.minWindow("ADOBECODEBANC", "ABC"));
+	}
+
+}

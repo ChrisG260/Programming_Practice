@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;java_basics.Casting&apos; to &apos;CastingBaseTypes&apos;&#x0D;&#x0A;- Original project: &apos;java_basics&apos;&#x0D;&#x0A;- Original element: &apos;java_basics.Casting&apos;&#x0D;&#x0A;- Renamed element: &apos;java_basics.CastingBaseTypes&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Casting&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;java_basics{Casting.java[Casting" matchStrategy="1" name="CastingBaseTypes" qualified="false" references="true" similarDeclarations="false" stamp="1656620894883" textual="false" version="1.0"/>
+</session>

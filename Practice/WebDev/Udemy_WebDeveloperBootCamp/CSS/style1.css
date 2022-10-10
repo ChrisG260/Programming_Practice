@@ -1,0 +1,22 @@
+h1 {
+  color: red;
+}
+
+h2 {
+  color: blue;
+  background-color: rgb(89, 151, 0); /* rgb version og green */
+}
+
+h3 {
+  color: #00ff00; /* hex version of green */
+}
+
+button {
+  color: magenta;
+  background-color: rgb(157, 146, 74);
+}
+
+p {
+  color: olive;
+  background-color: whitesmoke;
+}

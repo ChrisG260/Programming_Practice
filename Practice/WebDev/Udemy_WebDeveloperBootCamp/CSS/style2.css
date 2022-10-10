@@ -1,0 +1,40 @@
+body {
+  background-color: #f1faee;
+}
+
+button {
+  font-size: 30px;
+  background-color: #a8dabc;
+}
+
+/* Any label followed by an input the input has it's background set to pink in this example */
+label + input {
+  background-color: pink;
+}
+
+#logon {
+  background-color: #1d3557;
+}
+
+h1,
+h2 {
+  color: #1d3557;
+}
+
+span {
+  color: aqua;
+}
+
+.testClass {
+  background-color: red;
+  color: black;
+  font-size: 20px;
+}
+
+/* TO only apply to nested items in an li you can do this 
+li a {
+    color : blue; 
+}
+
+all anchor tags inside any li will be colored blue in this example
+*/

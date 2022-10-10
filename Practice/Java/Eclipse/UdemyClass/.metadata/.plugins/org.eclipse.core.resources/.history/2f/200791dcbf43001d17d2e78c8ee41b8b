@@ -1,0 +1,64 @@
+package com.permutation;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class Soultion_perm {
+	/*
+	 * Input: s1 = "ab", s2 = "eidbaooo"
+		Output: true
+		Explanation: s2 contains one permutation of s1 ("ba")
+		[e][i][d][b][a][o][o][o]
+		
+		get permutations of string 1
+		check if second string contains permutations
+		
+		
+	 */
+	static void getPermutations(String str, String ans, Set<String> perms)
+    {
+ 
+        if (str.length() == 0) {
+        	perms.add(ans);
+        	ans = "";
+            return;
+        }
+ 
+        for (int i = 0; i < str.length(); i++) {
+ 
+            char ch = str.charAt(i);
+ 
+            String ros = str.substring(0, i) +
+                        str.substring(i + 1);
+ 
+            getPermutations(ros, ans + ch, perms);
+        }
+    }
+	
+    static public boolean checkInclusion(String s1, String s2) {
+        boolean result = false;
+        
+        Set<String> perms = new HashSet<>();
+        
+        getPermutations(s1, "", perms);
+        
+        for(String str : perms) {
+        	if(s2.contains(str)) return true;
+        }
+        
+        return result;
+    }
+
+	public static void main(String[] args) {
+		
+		long startTime = System.currentTimeMillis();
+		System.out.println(checkInclusion("prosperity", "properties"));
+		System.out.println(checkInclusion("ab", "eidbaooo"));
+		System.out.println(checkInclusion("ab", "eidboaoo"));
+		long endTime = System.currentTimeMillis();
+		
+		System.out.println("Timer " + (endTime - startTime) + " milliseconds");
+		
+	}
+
+}

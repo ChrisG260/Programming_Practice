@@ -1,0 +1,139 @@
+package com.permutation;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
+
+public class Soultion_perm {
+	/*
+	 * Input: s1 = "ab", s2 = "eidbaooo"
+		Output: true
+		Explanation: s2 contains one permutation of s1 ("ba")
+		[e][i][d][b][a][o][o][o]
+		
+		get permutations of string 1
+		check if second string contains permutations
+		
+		
+	 */
+	static void incValue(HashMap<Character, Integer> cMap, Character key) {
+		Integer cnt = cMap.get(key);
+		if(cnt == null) {cMap.put(key, 1);} else {cMap.put(key, cnt + 1);} // increment count or add new
+	}
+	
+	static void decValue(HashMap<Character, Integer> cMap, Character key) {
+		Integer cnt = cMap.get(key);
+		if(cnt == null) {cMap.put(key, 1);} else {cMap.put(key, cnt - 1);} // increment count or add new
+	}
+	
+	static public boolean checkInclusion(String s1, String s2) {
+	  
+	  if(s1.length() > s2.length()) return false;
+	  
+	  HashMap<Character, Integer> s1Map = new HashMap<>();
+	  HashMap<Character, Integer> s2Map = new HashMap<>(); 
+	  
+	  String alphabet = "abcdefghijklmnopqrstuvwxyz";
+	  for(int i = 0; i < 26; i++) {
+		  s1Map.put(alphabet.charAt(i), 0);
+		  s2Map.put(alphabet.charAt(i), 0);
+	  }
+	  
+	  for(Character c : s1.toCharArray()) incValue(s1Map, c);
+	  for(Character c : s2.toCharArray()) incValue(s2Map, c);
+	  	  
+	  int matches = 0;
+	  
+	  for(int i = 0; i < 26; i++) {
+		  if(s1Map.get(alphabet.charAt(i)) == s2Map.get(alphabet.charAt(i))) {
+			  matches++;
+		  }
+	  }
+
+	  int left = 0;
+	  for(int i = s1.length(); i < s2.length(); i++) {
+		if(matches == 26) return true;
+		char key = 	s2.charAt(i);	
+		if(s1Map.get(key) == s2Map.get(key)) {
+			matches++;
+		}
+		else if(s1Map.get(key) + 1 == s2Map.get(key)) {
+			matches--; 
+		}
+		key = s2.charAt(left);
+		decValue(s2Map, key);
+		if(s1Map.get(key) == s2Map.get(key)) {
+			matches++;
+		}
+		else if(s1Map.get(key) - 1 == s2Map.get(key)) {
+			matches--; 
+		}
+		left++;
+	  }
+	  
+	  return matches == 26;
+	}
+
+	public static void main(String[] args) {
+		
+		long startTime = System.currentTimeMillis();
+		System.out.println(checkInclusion("a", "ab"));
+		System.out.println(checkInclusion("prosperity", "properties"));
+		System.out.println(checkInclusion("ab", "eidbaooo"));
+		System.out.println(checkInclusion("ab", "eidboaoo"));
+		long endTime = System.currentTimeMillis();
+		
+		System.out.println("Timer " + (endTime - startTime) + " milliseconds");
+		
+	}
+
+}
+
+//static void getPermutations(String str, String ans, Set<String> perms)
+//{
+//
+//    if (str.length() == 0) {
+//    	perms.add(ans);
+//    	ans = "";
+//        return;
+//    }
+//
+//    for (int i = 0; i < str.length(); i++) {
+//
+//        char ch = str.charAt(i);
+//
+//        String ros = str.substring(0, i) +
+//                    str.substring(i + 1);
+//
+//        getPermutations(ros, ans + ch, perms);
+//    }
+//}
+//
+//public static Set<String> permutationFinder(String str) {
+//    Set<String> perm = new HashSet<String>();
+//    //Handling error scenarios
+//    if (str == null) {
+//        return null;
+//    } else if (str.length() == 0) {
+//        perm.add("");
+//        return perm;
+//    }
+//    char initial = str.charAt(0); // first character
+//    String rem = str.substring(1); // Full string without first character
+//    Set<String> words = permutationFinder(rem);
+//    for (String strNew : words) {
+//        for (int i = 0;i<=strNew.length();i++){
+//            perm.add(charInsert(strNew, initial, i));
+//        }
+//    }
+//    return perm;
+//}
+//
+//public static String charInsert(String str, char c, int j) {
+//    String begin = str.substring(0, j);
+//    String end = str.substring(j);
+//    return begin + c + end;
+//}
+//
+
+

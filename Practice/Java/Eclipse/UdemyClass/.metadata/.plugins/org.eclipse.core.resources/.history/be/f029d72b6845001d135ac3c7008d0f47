@@ -1,0 +1,5 @@
+package AlertDAO;
+
+public class AlertService {
+
+}

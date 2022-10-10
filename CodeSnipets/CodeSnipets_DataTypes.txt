@@ -1,0 +1,58 @@
+Data Types
+
+Language: Java
+Data Type   |Size             |Example                     |Description
+byte        |1 byte           |byte    _var_byt = 0;       |Stores whole numbers from -128 to 127
+short       |2 bytes          |short   _var_sht = 0;       |Stores whole numbers from -32,768 to 32,767
+int         |4 bytes          |int     _var_int = 0;       |Stores whole numbers from -2,147,483,648 to 2,147,483,647
+long        |8 bytes          |long    _var_lng = 0L;      |Stores whole numbers from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+float       |4 bytes          |float   _var_flt = 0.0f;    |Stores fractional numbers. Sufficient for storing 6 to 7 decimal digits
+double      |8 bytes          |double  _var_dbl = 0.0d;    |Stores fractional numbers. Sufficient for storing 15 decimal digits
+boolean     |1 bit            |boolean _var_bln = true;    |Stores true or false values
+char        |2 bytes          |char    _var_chr = 'a';     |Stores a single character/letter or ASCII values
+String      |variable         |String  _var_str = "Hello"; |A String variable contains a collection of characters surrounded by double quotes
+                              
+                              
+Language: JavaScript          
+Data Type   |Size             |Example                     |Description
+var         |8 bytes          |var     _var = 0;           |Stores number or string values
+let         |8 bytes          |let     _var = "Hello";     |Stores number or string values
+const       |8 bytes          |const   _var = 0;           |Stores number or string values
+
+Language: C#
+Data Type   |Size             |Example                     |Description
+int         |4 bytes          |int    _var_int = 0;        |Stores whole numbers 
+long        |8 bytes          |long   _var_lng = 0L;       |Stores whole numbers 
+float       |4 bytes          |float  _var_flt = 0.0F;     |Stores fractional numbers. Sufficient for storing 6 to 7 decimal digits
+double      |8 bytes          |double _var_dbl = 0.0D;     |Stores fractional numbers. Sufficient for storing 15 decimal digits
+bool        |1 bit            |bool   _var_bln = true;     |Stores true or false values
+char        |2 bytes          |char   _var_chr = 'a';      |Stores a single character/letter, surrounded by single quotes
+string      |2 bytes(a char)  |string _var_str = "Hello";  |Stores a sequence of characters, surrounded by double quotes
+
+Language: C++
+Data Type   |Size             |Example                     |Description
+int         |4 bytes          |int    _var_int = 0;        |Stores whole numbers 
+long int    |8 bytes          |long   _var_lng = 0;        |Stores whole numbers
+float       |4 bytes          |float  _var_flt = 0.0;      |Stores fractional numbers. Sufficient for storing 6 to 7 decimal digits
+double      |8 bytes          |double _var_dbl = 0.0;      |Stores fractional numbers. Sufficient for storing 15 decimal digits
+bool        |1 bit            |bool   _var_bln = true;     |Stores true or false values
+char        |2 bytes          |char   _var_chr = 'a';      |Stores a single character/letter, surrounded by single quotes
+string      |2 bytes(a char)  |string _var_str = "Hello";  |Stores a sequence of characters, surrounded by double quotes
+
+					  
+		
+		
+	
+	  
+	  
+			
+
+
+
+
+
+
+
+
+
+

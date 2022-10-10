@@ -1,0 +1,33 @@
+Note : Name java file after class containing main
+
+Compile Java on command line
+
+	javac  ExampleProgram.java      //Creates ExampleProgram.class, compiled file
+	
+Run
+ 
+	java ExampleProgram
+	
+	java -jar myprogram.jar
+	
+Package as Jar for executable
+
+	- Need Manifest file to tell where the main entry point is
+	
+	    save as : manifest.mf
+	
+		base contents of manifest: Main-Class: <class name with main>
+		
+	create jar: jar -cvfm myprogram.jar manifest.mf *.class
+	
+	Extra Notes for jar files:
+		extract jar: jar -xvf
+		List contents of jar: jar -tvf
+	
+		
+		
+		
+
+	
+
+

@@ -1,0 +1,74 @@
+Create Dealership
+
+Person class abstract
+	name
+	age
+	address
+		Street number
+		street
+		state
+		city
+		zip
+	phone
+
+Employee (Extends Person)
+	EmployeeID   int
+	Salary       int
+	int runCreditHistory(Customer, Vehicle, int downPayment)
+	bool processTransaction(Customer, Vehicle, int amount)
+	
+
+Customer  (Extends Person)
+    bool isFinanced;
+    bool isApproved; 
+	int  CreditScore;
+	purchaseCar(Vehicle, Employee, bool isFinanced)
+
+
+Vehicle
+	lotID            String
+	year             int
+	make             String
+	model            String
+	engine           String
+	vin              String
+	odometer         Odometer
+	fuel economy     FuelEconomy
+	exterior color   Color Class 
+	interior color   Color Class   
+	body             BodyType
+	seating          int
+	transmission     TransmissionType
+	drivetrain       String
+	Features         String Array
+
+Color Class
+	String color
+	void addColor(enum Color)
+	void removeColor (enum Color)
+	String getColor() (return Color)
+
+Enum Color
+	Silver, Metallic, Gray, Black, Yellow, Green, White, Red
+
+Enum BodyType
+	SUV, TRUCK, AUTO, VAN
+
+Enum TransmissionType
+	Automatic, Standard
+		
+Fuel economy class
+	float city
+	float hwy
+	String getFuelEconomyString() { return city + "//" + hwy + " mpg City//Hwy" }
+	
+Odomoter class
+	int miles;
+	String getOdomoterString() { return (formated #,#) " miles" }
+	
+Features
+	String array 100 features
+	void addFeature(String feature)
+	void RemoveFeature(String feature)
+	String getListOfFeatures() { return Features } // parsed
+			

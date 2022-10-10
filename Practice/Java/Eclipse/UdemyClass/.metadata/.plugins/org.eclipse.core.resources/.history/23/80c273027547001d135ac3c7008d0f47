@@ -1,0 +1,40 @@
+package com.leetcode.binarystmaxdepth;
+
+import com.leetcode.inverttree.TreeNode;
+
+public class Solution {
+	
+    static public int maxDepth(TreeNode root) {
+        if (root == null)
+            return 0;
+        else {
+            /* compute height of each subtree */
+            int lheight = maxDepth(root.left);
+            int rheight = maxDepth(root.right);
+ 
+            /* use the larger one */
+            if (lheight > rheight)
+                return (lheight + 1);
+            else
+                return (rheight + 1);
+        }
+    }
+
+	public static void main(String[] args) {
+		TreeNode root = new TreeNode(4);
+		root = TreeNode.constructBST(root, new Integer[] {9,20,null,null,15,7});
+		
+		TreeNode.printLevelOrder(root);
+		
+		System.out.println(maxDepth(root));
+			
+		root = new TreeNode(2);
+		root = TreeNode.constructBST(root, new Integer[] {1,null,2});
+		
+		TreeNode.printLevelOrder(root);
+		
+		System.out.println(maxDepth(root));
+		
+	}
+
+}

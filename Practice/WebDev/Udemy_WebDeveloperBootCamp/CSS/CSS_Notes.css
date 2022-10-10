@@ -1,0 +1,76 @@
+/*
+
+////////////////////em's and rems///////////////////////
+    1em is = parent fontsize
+    2em is 2x parant fontsize
+
+    Oval button that scales with parents font size
+    Button {
+        font-size: 1em;         // 1 em is same size as parant font size
+        padding: 0 1em;         
+        boarder-radius: 0.5em;  // boarder radius is half parent font size
+        background-color: blue;
+        color: white;
+    }
+
+    common problem with em's: em's stack in nesting so can multiply over nested items resulting in unexpected
+    behavior
+
+    rems - constant ratio compared to root element of entire document fontsize
+
+    //Change root document font-size
+    html {
+        font-size: 20px;
+    }
+
+    rems are compared to the whol document font size
+    
+////////////////////////////////////////////////////////////
+
+/////////////opacity % alpha channel////////////////////////
+
+rgba(red,green,blue,0-1 alpha) 0 tranparent, 1 solid 
+
+opacity : 0.3  (similar to alpha but applies to entire element)
+////////////////////////////////////////////
+
+
+//////////////////////////////
+Flex box
+
+display: flex;                                                                               //turns on flex box for the container it is in
+flex-direction: <column or row or row-reverse or column-reverse>;                            //how they are placed in flex container
+flex-wrap: <wrap, nowrap, wrap-reverse>;                                                     //determines if container is single line or multiline, direction of cross-axis
+flex-flow: <row nowrap, column-reverse,column wrap,row-reverse wrap-reverse>;                //short hand for setting direction and wrap
+justify-content: <flex-start, flex-end, center, space-between, space-around, space-evenly> ; //aligns along main axis
+align-items: <auto, flex-start, flex-end, center, baseline, stretch>;                        //aligns along cross axis but in the perpendicular direction
+align-self: <auto, flex-start, flex-end, center, baseline, stretch>;                         //overide for individual elements
+align-content: <flex-start, flex-end, center, space-between, space-around, stretch>;         //align along cross axis
+flex-grow: <number>;                                                                         //determines how much the flex item will grow relative to the rest of the flex items
+flex-shrink: <number>;                                                                       // determines how much the flex item will shrink relative to the rest of the flex items in the flex container
+flex-basis: <30%, 50%, content, auto>                                                        // the initial main size of the flex item
+
+//////////////// Media Queires
+
+Change layout based on screen your on. Change based on viewing size and orenation.
+
+@media(width: 360px) {
+    div {
+        color: red;
+    }
+}
+
+
+///////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+*/

@@ -1,0 +1,89 @@
+package FolderNames;
+
+import java.io.StringReader;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+import javax.xml.parsers.*;
+import org.xml.sax.InputSource;
+import org.w3c.dom.*;
+import java.io.*;
+
+public class Folders {
+    public static Collection<String> folderNames(String xml, char startingLetter) throws Exception {
+        List<String> result = new ArrayList<>();
+        String xmlRecords =
+        	      "<data>" +
+        	      " <employee>" +
+        	      "   <name>John</name>" +
+        	      "   <title>Manager</title>" +
+        	      " </employee>" +
+        	      " <employee>" +
+        	      "   <name>Sara</name>" +
+        	      "   <title>Clerk</title>" +
+        	      " </employee>" +
+        	      "</data>";
+
+        	    try {
+        	        DocumentBuilderFactory dbf =
+        	            DocumentBuilderFactory.newInstance();
+        	        DocumentBuilder db = dbf.newDocumentBuilder();
+        	        InputSource is = new InputSource();
+        	        is.setCharacterStream(new StringReader(xml));
+
+        	        Document doc = db.parse(is);
+        	        NodeList nodes = doc.getElementsByTagName("folder");
+
+        	        // iterate the employees
+        	        for (int i = 0; i < nodes.getLength(); i++) {
+        	           Element element = (Element) nodes.item(i);
+
+        	           NodeList name = element.getElementsByTagName("name");
+        	           Element line = (Element) name.item(0);
+        	           System.out.println("Name: " + getCharacterDataFromElement(line));
+
+//        	           NodeList title = element.getElementsByTagName("title");
+//        	           line = (Element) title.item(0);
+//        	           System.out.println("Title: " + getCharacterDataFromElement(line));
+        	        }
+        	    }
+        	    catch (Exception e) {
+        	        e.printStackTrace();
+        	    }
+        	    /*
+        	    output :
+        	        Name: John
+        	        Title: Manager
+        	        Name: Sara
+        	        Title: Clerk
+        	    */    
+        	    
+        	  
+        return result;
+    }
+    
+    public static String getCharacterDataFromElement(Element e) {
+        Node child = e.getFirstChild();
+        if (child instanceof CharacterData) {
+           CharacterData cd = (CharacterData) child;
+           return cd.getData();
+        }
+        return "?";
+      }
+    
+    public static void main(String[] args) throws Exception {
+        String xml =
+                "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" +
+                "<folder name=\"c\">" +
+                    "<folder name=\"program files\">" +
+                        "<folder name=\"uninstall information\" />" +
+                    "</folder>" +
+                    "<folder name=\"users\" />" +
+                "</folder>";
+
+        Collection<String> names = folderNames(xml, 'u');
+        for(String name: names)
+            System.out.println(name);
+    }
+}

@@ -1,0 +1,27 @@
+INDEX VERSION 1.131+E:\Programming\Practice\Java\Eclipse\UdemyClass\.metadata\.plugins\org.eclipse.jdt.core
+2281457248.index
+3935346352.index
+1246768764.index
+1364968861.index
+961145148.index
+4042456995.index
+3653370757.index
+2419126052.index
+1509799344.index
+1865797976.index
+1554272215.index
+3071832746.index
+3764935760.index
+104827545.index
+2865284232.index
+286171851.index
+1220035278.index
+3701597351.index
+2987452826.index
+1000372560.index
+1003676157.index
+2191601338.index
+1834250792.index
+3591144278.index
+204932650.index
+210772692.index

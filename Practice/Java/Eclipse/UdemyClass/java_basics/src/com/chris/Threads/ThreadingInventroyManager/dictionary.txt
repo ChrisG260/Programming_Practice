@@ -1,0 +1,13 @@
+Chair
+Couch
+Table
+Cushion
+Computer
+Game
+Sink
+Glass
+Plate
+Mouse
+Hat
+Shirt
+Pants

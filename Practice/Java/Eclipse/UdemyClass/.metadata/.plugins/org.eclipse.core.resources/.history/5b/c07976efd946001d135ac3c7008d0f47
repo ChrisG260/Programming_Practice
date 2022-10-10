@@ -1,0 +1,24 @@
+package com.leetcode.inverttree;
+
+import com.leetcode.inverttree.TreeNode;
+
+public class Solution {
+
+    public TreeNode invertTree(TreeNode root) {
+        if(root == null) return null;
+        
+        
+        
+        
+    	return null;
+    }
+    
+	public static void main(String[] args) {
+		TreeNode root;
+		
+
+		
+		System.out.println();
+	}
+
+}

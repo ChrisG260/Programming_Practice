@@ -1,0 +1,44 @@
+button.buttonHover {
+  background-color: white;
+}
+
+/* 
+    buttons with class="buttonHover", with psudo classes like hover
+    will add the style when you hover over the button
+*/
+
+button.buttonHover:hover {
+  background-color: green;
+}
+
+/* 
+   Change back ground on buttons with class "buttonHover", when clicked on and making it active
+*/
+
+button.buttonHover:active {
+  background-color: red;
+}
+
+/* Psudo selector :: */
+
+h1::first-letter {
+  color: red;
+}
+
+p::selection {
+  background-color: rgba(45, 77, 95, 0.698);
+}
+
+/*
+Every div with a class of square, change back ground of every other to red
+div.square:nth-of-type(2n) {
+
+    background-color: red;
+}
+*/
+
+/*
+specicifcy
+ID is greater than class which is greater than element when choosing which one wins when conflicts occur
+ID>Class>Element
+*/

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdapterPattern", "AdapterPattern\AdapterPattern.csproj", "{1B85FACE-69C7-4165-ABF2-F219CB1B3888}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockHistoryExample", "StockHistoryExample\StockHistoryExample.csproj", "{006396F7-D1FB-4692-9051-BFE60D7E12E1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{006396F7-D1FB-4692-9051-BFE60D7E12E1}.Debug|x86.ActiveCfg = Debug|x86
+		{006396F7-D1FB-4692-9051-BFE60D7E12E1}.Debug|x86.Build.0 = Debug|x86
+		{006396F7-D1FB-4692-9051-BFE60D7E12E1}.Release|x86.ActiveCfg = Release|x86
+		{006396F7-D1FB-4692-9051-BFE60D7E12E1}.Release|x86.Build.0 = Release|x86
+		{1B85FACE-69C7-4165-ABF2-F219CB1B3888}.Debug|x86.ActiveCfg = Debug|x86
+		{1B85FACE-69C7-4165-ABF2-F219CB1B3888}.Debug|x86.Build.0 = Debug|x86
+		{1B85FACE-69C7-4165-ABF2-F219CB1B3888}.Release|x86.ActiveCfg = Release|x86
+		{1B85FACE-69C7-4165-ABF2-F219CB1B3888}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = StockHistoryExample\StockHistoryExample.csproj
+	EndGlobalSection
+EndGlobal

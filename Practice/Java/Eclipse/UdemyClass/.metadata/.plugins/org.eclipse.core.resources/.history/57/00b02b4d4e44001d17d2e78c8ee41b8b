@@ -1,0 +1,101 @@
+package com.chris.minwinsub;
+
+import java.util.HashMap;
+
+public class MinWindow {
+	
+	static void incValue(HashMap<Character, Integer> cMap, Character key) {
+		Integer cnt = cMap.get(key);
+		if(cnt == null) {cMap.put(key, 1);} else {cMap.put(key, cnt + 1);} // increment count or add new
+	}
+	
+	static void decValue(HashMap<Character, Integer> cMap, Character key) {
+		Integer cnt = cMap.get(key);
+		if(cnt == null) {cMap.put(key, 1);} else {cMap.put(key, cnt - 1);} // increment count or add new
+	}
+	
+	static boolean matches(HashMap<Character, Integer> map1, HashMap<Character, Integer> map2) {
+		int matches = 0;
+		for(Character key : map2.keySet()) {
+			Integer valueMap1 = map1.get(key);
+			Integer valueMap2 = map2.get(key);
+            if(	valueMap1 != null && 
+            	valueMap2 != null && 
+            	valueMap1 == valueMap2) matches++;
+		}
+		return matches == map2.size();
+	}
+	
+	static boolean singleMatch(HashMap<Character, Integer> map1, HashMap<Character, Integer> map2, Character key) {
+		Integer valueMap1 = map1.get(key);
+		Integer valueMap2 = map2.get(key);
+		if(	valueMap1 != null && 
+            valueMap2 != null && 
+            valueMap1 == valueMap2) return true;
+		return false;
+	}
+
+    static public String minWindow(String s, String t) {
+        String result = "";
+        
+        if(t.length() > s.length()) return "";
+        if(t.equals(s)) return t;
+        
+        HashMap<Character, Integer> sMap = new HashMap<>();
+  	    HashMap<Character, Integer> tMap = new HashMap<>();
+  	    
+  	    for(Character c : t.toCharArray()) incValue(tMap, c);
+ 	    
+        int left = 0;
+        boolean matched = false;
+        for(int right = 0; right < s.length(); right++) {
+        	
+        	Character key = s.charAt(right);
+        	incValue(sMap, key);
+        	int diff = right - left + 1;
+        	boolean validWin = left <= right && diff >= tMap.size()  ? true : false;
+//        	if(validWin && matches(sMap, tMap)) matched = true;
+        	if(validWin && !singleMatch(sMap,tMap, key)) {
+       			decValue(sMap, s.charAt(left));
+       			left++;
+           	}
+        	
+        	if(validWin && matches(sMap, tMap)) {
+        		while(	left <= right && 
+        				right - left + 1 >= tMap.size() && 
+        				matches(sMap, tMap)) {
+        			decValue(sMap, s.charAt(left));
+        			left++;
+        		}
+        		if(left > 0 && !matches(sMap, tMap)) {
+        			left--;
+        			incValue(sMap,s.charAt(left));
+        		}
+        		String sub = s.substring(left, right + 1);
+        		if(result.isEmpty() || sub.length() <= result.length()) {
+        			result = sub;
+        		}
+        	} 
+
+        }
+        
+        return result;
+    }
+    
+	public static void main(String[] args) {
+		
+		long startTime = System.currentTimeMillis();
+		System.out.println(minWindow("abc", "ac"));
+		System.out.println(minWindow("bba", "ab"));
+		System.out.println(minWindow("abc", "ab"));
+		System.out.println(minWindow("ADOBECODEBANC", "ABC"));
+		System.out.println(minWindow("aa", "aa"));
+		System.out.println(minWindow("a", "a"));
+		System.out.println(minWindow("a", "aa"));
+		long endTime = System.currentTimeMillis();
+		
+		System.out.println("Timer " + (endTime - startTime) + " milliseconds");
+
+	}
+
+}

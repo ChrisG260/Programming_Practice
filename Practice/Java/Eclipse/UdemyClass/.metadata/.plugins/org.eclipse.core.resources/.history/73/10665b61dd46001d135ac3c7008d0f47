@@ -1,0 +1,106 @@
+package com.leetcode.inverttree;
+
+// Definition for a binary tree node.
+public class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+    TreeNode() {}
+    TreeNode(int val) { this.val = val; }
+    TreeNode(int val, TreeNode left, TreeNode right) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
+    }
+    
+    public static TreeNode insert(TreeNode root, int val) {
+    	
+    	if(root == null) {
+    		return new TreeNode(val);
+    	}
+    	
+    	if(val < root.val) {
+    		root.left = insert(root.left, val);
+       	}else {
+    		root.right = insert(root.right, val);
+    	}
+    	
+    	return root;
+    	
+    }
+    
+    // Function to construct a BST from given keys
+    public static TreeNode constructBST(TreeNode root, int[] keys)
+    {
+        for (int key: keys) {
+            root = insert(root, key);
+        }
+        return root;
+    }
+    
+    // Function to perform inorder traversal on the tree
+    public static void inorder(TreeNode root)
+    {
+        if (root == null) {
+            return;
+        }
+ 
+        inorder(root.left);
+        System.out.print(root.val + " ");
+        inorder(root.right);
+    }
+    
+    public static void printFromRootLeft(TreeNode root)
+    {
+        if (root == null) {
+            return;
+        }
+
+        System.out.print(root.val + " ");
+        inorder(root.left);
+        inorder(root.right);
+    }
+    
+    static int height(TreeNode root)
+    {
+        if (root == null)
+            return 0;
+        else {
+            /* compute height of each subtree */
+            int lheight = height(root.left);
+            int rheight = height(root.right);
+ 
+            /* use the larger one */
+            if (lheight > rheight)
+                return (lheight + 1);
+            else
+                return (rheight + 1);
+        }
+    }
+    
+    /* Print nodes at a given level */
+    static void printGivenLevel(TreeNode root, int level)
+    {
+        if (root == null)
+            return;
+        if (level == 1) {
+            System.out.print(root.val + " ");
+        }
+        else if (level > 1) {
+            printGivenLevel(root.left, level - 1);
+            printGivenLevel(root.right, level - 1);
+        }
+    }
+ 
+    /* function to print level order traversal of tree*/
+    public static void printLevelOrder(TreeNode root)
+    {
+        int h = height(root);
+        int i;
+        for (i = 1; i <= h; i++) {
+            printGivenLevel(root, i);
+            //System.out.print(System.lineSeparator());
+        }
+    }
+    
+}

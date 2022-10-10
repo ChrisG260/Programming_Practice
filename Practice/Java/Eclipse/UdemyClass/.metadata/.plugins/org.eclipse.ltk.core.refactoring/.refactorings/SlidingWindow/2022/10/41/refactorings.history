@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;Solution_PermIS&apos; to &apos;com.permutation&apos;&#x0D;&#x0A;- Original project: &apos;SlidingWindow&apos;&#x0D;&#x0A;- Original element: &apos;SlidingWindow/src/Solution_PermIS&apos;&#x0D;&#x0A;- Renamed element: &apos;SlidingWindow/src/com.permutation&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;Solution_PermIS&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;Solution_PermIS" name="com.permutation" qualified="false" references="true" stamp="1664870827502" textual="false" version="1.0"/>
+</session>

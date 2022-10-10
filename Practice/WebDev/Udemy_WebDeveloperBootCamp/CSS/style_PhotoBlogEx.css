@@ -1,0 +1,16 @@
+img {
+  width: 30%;
+  height: 30%;
+  margin: calc(10% / 8);
+}
+
+.mainNav {
+  text-transform: uppercase;
+  border-bottom: 2px solid rgba(156, 139, 139, 0.881);
+  width: 30%;
+  margin-top: calc(10% / 8);
+  margin-left: calc(10% / 8);
+  padding: 1em 0;
+  font-family: "Lato", sans-serif;
+  font-size: 1em;
+}

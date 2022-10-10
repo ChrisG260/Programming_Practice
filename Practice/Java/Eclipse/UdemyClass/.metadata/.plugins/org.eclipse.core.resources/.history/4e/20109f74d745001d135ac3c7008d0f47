@@ -1,0 +1,25 @@
+package Soultion;
+
+public class Solution {
+
+    static public boolean isPalindrome(int x) {
+         String num = String.valueOf(x);
+         
+         StringBuilder input = new StringBuilder();
+         input.append(num);
+         input.reverse();
+         
+         if(num.equalsIgnoreCase(input.toString())) return true;
+         
+         
+         return false;
+    }
+    
+	public static void main(String[] args) {
+
+		System.out.println(isPalindrome(121));
+		System.out.println(isPalindrome(-121));
+		System.out.println(isPalindrome(10));
+	}
+
+}

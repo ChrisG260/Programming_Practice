@@ -1,0 +1,32 @@
+package com.leetcode.inverttree;
+
+// Definition for a binary tree node.
+public class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+    TreeNode() {}
+    TreeNode(int val) { this.val = val; }
+    TreeNode(int val, TreeNode left, TreeNode right) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
+    }
+    
+    public TreeNode insert(TreeNode t, int val) {
+    	
+    	if(t == null) {
+    		return t;
+    	}
+    	
+    	if(val > t.val) {
+    		insert(t.right, val);
+    	}else {
+    		insert(t.left, val);
+    	}
+    	
+    	return t;
+    	
+    }
+    
+}
